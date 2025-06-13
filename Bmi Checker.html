@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+<script>
+function bmiFunction() {
+    let no1 = parseFloat(document.getElementById("BMIheight").value);
+    let no2 = parseFloat(document.getElementById("BMIweight").value);
+    let res = no2 / (no1 * no1);
+
+    if (res < 18.5)
+        alert("Your BMI is " + res.toFixed(1) + " . You are underweight. Please gain weight.");
+    else if (res >= 18.5 && res <= 24.9)
+        alert("Your BMI is " + res.toFixed(1) + " . Congratulations. You are at a healthy weight.");
+    else if (res >= 25 && res <= 29.9)
+        alert("Your BMI is " + res.toFixed(1) + " . You are overweight. Please lose weight.");
+    else
+        alert("Your BMI is " + res.toFixed(1) + " . You are obese. Please take care of your health.");
+
+    document.getElementById("BMIresult").value = res.toFixed(1);
+}
+</script>
+</head>
+<body>
+    <form></form>
+    
+            <h2>BMI Checker </h2>
+            <p>Please enter your height and weight :</p>
+            <p>
+            <label>Height (in meter):</label><br>
+            <input type="text" id="BMIheight"><br></p>
+            <p>
+            <label>Weight (in kilogram):</label><br>
+            <input type="text" id="BMIweight"><br></p>
+            <p>
+            <label>You BMI is :</label><br>
+            <input type="text" id="BMIresult" readonly><br><br></p>
+
+            <p></p><input type="button"  onclick="bmiFunction()" value="Calculate"></input></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  </head>
+    <script>
+        function addFunction(){
+      let num1=parseFloat(document.getElementById("num1").value);
+      let num2=parseFloat(document.getElementById("num2").value);
+      let total1=num1+num2;
+      document.getElementById("res1").value=total1.toFixed(2);//display for input text
+    }
+
+    function substractFunction(){
+      let num1=parseFloat(document.getElementById("num1").value);
+      let num2=parseFloat(document.getElementById("num2").value);
+      let total1=num1-num2;
+      document.getElementById("res1").value=total1.toFixed(2);//display for input text
+    }
+
+    function multiplyFunction(){
+      let num1=parseFloat(document.getElementById("num1").value);
+      let num2=parseFloat(document.getElementById("num2").value);
+      let total1=num1*num2;
+      document.getElementById("res1").value=total1.toFixed(2);//display for input text
+    }
+
+    function divideFunction(){
+      let num1=parseFloat(document.getElementById("num1").value);
+      let num2=parseFloat(document.getElementById("num2").value);
+      let total1=num1/num2;
+      document.getElementById("res1").value=total1.toFixed(2);//display for input text
+    }
+
+    function clearFunction() {
+       document.getElementById("num1").value = "";
+       document.getElementById("num2").value = "";
+       document.getElementById("res1").value = "";
+    }
+    </script>
+
+   <h1>Simple Calculator Program</h1>
+</head>
+<body>
+<p>
+  <label>Number 1:</label>
+  <input type="text" id="num1" value="0"></input></p>
+
+<p>
+  <label>Number 2:</label>
+  <input type="text" id="num2" value="0"></input></p>
+
+<p>
+  <label>Result:</label>
+  <input type="text" id="res1" value="0" disabled></p>
+
+<p>
+  <input type="button" onclick="addFunction()" value="Add"></input>
+  <input type="button" onclick="substractFunction()" value="Subtract"></input>
+  <input type="button" onclick="multiplyFunction()" value="Multiply"></input>
+  <input type="button" onclick="divideFunction()" value="Divide"></input>
+  <input type="button" onclick="clearFunction()" value="Clear"></input> </p>
+
+</body>
+</html>

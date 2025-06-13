@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+<script>
+function converterFunction(convType) {
+    var cRes;
+    var ctext;
+    let num1 = document.getElementById("nilai").value;
+
+    switch (convType) {
+        case "cmtom":
+            cRes = num1 / 100;
+            ctext = " metre";
+            document.getElementById("convResult").innerHTML = cRes.toString() + ctext;
+            break;
+        case "mtocm":
+            cRes = num1 * 100;
+            ctext = " centimeter";
+            document.getElementById("convResult").innerHTML = cRes.toString() + ctext;
+            break;
+        case "mtokm":
+            cRes = num1 / 1000;
+            ctext = " kilometer";
+            document.getElementById("convResult").innerHTML = cRes.toString() + ctext;
+            break;
+        case "kmtom":
+            cRes = num1 * 1000;
+            ctext = " metre";
+            document.getElementById("convResult").innerHTML = cRes.toString() + ctext;
+            break;
+    }
+}
+</script>
+</head>
+
+<body>
+<form>
+    <h1>Unit Conversion</h1>
+    <p>Please enter unit that you want to convert :</p>
+    
+    <label>Unit : </label>
+    <input type="text" id="nilai"><br><br>
+
+    <label>Your conversion is : </label>
+    <input type="text" id="grade" disabled><br><br>
+    <input type="button" onclick="converterFunction('cmtom')" value="Cm to Metre">
+    <input type="button" onclick="converterFunction('mtocm')" value="Metre to Cm">
+    <input type="button" onclick="converterFunction('mtokm')" value="Metre to Km">
+    <input type="button" onclick="converterFunction('kmtom')" value="Km to Metre"><br><br>
+
+    <p id="convResult">Result here : </p>
+</form>
+</body>
+</html>
